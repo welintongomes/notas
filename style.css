@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 7px 0;
+}
+
+#resultado {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    transition: left 0.3s;
+    /* Para um efeito suave */
+}
+
+.card:hover {
+    background-color: #f0f0f0;
+}
+
+.card.expanded {
+    position: relative;
+    height: 100vh;
+    /* Altera para a altura total da viewport */
+    overflow-y: auto;
+    /* Permite rolagem se necessário */
+    left: 4%;
+    max-width: 95%;
+}
+
+
+.card-content {
+    height: 80%;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+}
+
+iframe {
+    height: 90%;
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+div#botoes-centrais {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+div#pesquisartitnot {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: space-around;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+/*inicio temas*/
+#toggleTema {
+    height: 1px;
+    font-size: 2vw;
+    background-color: transparent;
+    /* Fundo transparente */
+    border: 0px solid #007BFF;
+    /* Cor da borda */
+    color: #007BFF;
+    /* Cor do texto */
+    padding: 12px 6px;
+    /* Espaçamento interno */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Mão ao passar o mouse */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transições suaves */
+}
+
+#toggleTema:hover {
+    background-color: transparent;
+    /* Cor de fundo ao passar o mouse */
+    color: rgb(191, 173, 160);
+    /* Cor do texto ao passar o mouse */
+}
+
+div#menuetema{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+/* Estilos para o tema claro */
+body {
+    background-color: white;
+    color: black;
+}
+
+/* Estilos para o tema escuro */
+body.dark {
+    background-color: #121212;
+    /* Cor de fundo escura */
+    color: white;
+    /* Cor do texto clara */
+}
+
+.card {
+    background-color: white;
+    /* Cor do cartão claro */
+}
+
+/* Estilos para cartões no tema escuro */
+body.dark .card {
+    background-color: #1e1e1e;
+    /* Cor do cartão escura */
+}
+.dark textarea {
+    background-color: rgb(70, 62, 62);
+    border: none;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+.dark #titulo{
+    background-color: rgb(70, 62, 62);
+    border: none;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+.dark #pesquisar{
+    background-color: rgb(70, 62, 62);
+    border: none;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+
+
+/*final temas*/
