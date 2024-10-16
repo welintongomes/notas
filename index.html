@@ -5,39 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Notas</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon-512x512.png" type="image/png">
 </head>
 
 <body>
     <div id="menuetema">
-        <button id="toggleTema">
-            <span id="temaIcon">🌞</span> 
-        </button>
+        <input type="text" id="pesquisar" placeholder="Pesquisar notas...">
         <h1>Notas</h1>
+        <button id="toggleTema">Tema
+        <span id="temaIcon">🌞</span> 
+        </button>
     </div>
     <!-- botoes para mudar o tema -->
     <div id="pesquisartitnot">
-        <input type="text" id="pesquisar" placeholder="Pesquisar notas...">
         <input type="text" id="titulo" placeholder="Título da nota...">
         <textarea id="nota" placeholder="Digite sua nota aqui..."></textarea>
         <input type="file" id="imagem" accept="image/*">
     </div>
     <div id="botoes-centrais">
-        <button id="salvar">Salvar Nota</button>
+        <button id="salvar" class="btoes">Salvar Nota</button>
         <!-- exportarNotas chama direto no codigo script.js a funçao exportarNotas -->
-        <button id="exportarNotas">Exportar Notas</button>
+        <button id="exportarNotas" class="btoes">Exportar Notas</button>
 
         <!-- chama com botão um file para inportar o arquivo json -->
-        <button id="abrirImportar">Importar Notas</button>
+        <button id="abrirImportar" class="btoes">Importar Notas</button>
         <input type="file" id="inputImportar" style="display: none;">
 
         <!-- botão para excluir todas as notas -->
-        <button id="excluirTodasNotas">Excluir Tudo</button>
+        <button id="excluirTodasNotas" class="btoes">Excluir Tudo</button>
     </div>
 
 
     <div id="resultado"></div>
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(function (registration) {
+                    console.log('Service Worker registrado com sucesso:', registration.scope);
+                }).catch(function (error) {
+                    console.log('Falha ao registrar o Service Worker:', error);
+                });
+        }
+    </script>
 </body>
 
 </html>
