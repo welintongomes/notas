@@ -1,11 +1,39 @@
+/*inicio media query para os botões*/
+.btoes {
+    width: 100%;
+    margin: 3px auto;
+    background-color: #0a75e7;
+    border: solid 8px #007bff;
+    
+    border-radius: 4px;
+
+}
+
+@media (min-width: 375px) {
+    .btoes {
+        
+        width: 49%;
+        /* Em telas médias, os itens ocupam quase metade da tela */
+    }
+}
+
+@media (min-width: 1024px) {
+    .btoes {
+        width: 24.33%;
+        /* Em telas maiores, os itens ocupam cerca de um terço da tela */
+    }
+}
+/*fim media query para os botões*/
+/*------------------------------------------------------------*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 20px;
 }
 
 input, textarea {
     width: 100%;
     margin: 7px 0;
+    font-size: 22px;
 }
 
 #resultado {
@@ -28,6 +56,9 @@ input, textarea {
 .card:hover {
     background-color: #f0f0f0;
 }
+.dark .card:hover {
+    background-color: #141210a1;
+}
 
 .card.expanded {
     position: relative;
@@ -35,10 +66,9 @@ input, textarea {
     /* Altera para a altura total da viewport */
     overflow-y: auto;
     /* Permite rolagem se necessário */
-    left: 4%;
-    max-width: 95%;
+    left: 5%;
+    max-width: 94%;
 }
-
 
 .card-content {
     height: 80%;
@@ -54,13 +84,6 @@ iframe {
     display: block;
 }
 
-div#botoes-centrais {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    width: 100%;
-}
-
 div#pesquisartitnot {
     display: flex;
     justify-content: flex-end;
@@ -73,22 +96,16 @@ div#pesquisartitnot {
 
 /*inicio temas*/
 #toggleTema {
-    height: 1px;
-    font-size: 2vw;
+    width: 49px;
+    height: -1px;
+    font-size: 10pxx;
     background-color: transparent;
-    /* Fundo transparente */
     border: 0px solid #007BFF;
-    /* Cor da borda */
     color: #007BFF;
-    /* Cor do texto */
-    padding: 12px 6px;
-    /* Espaçamento interno */
-    border-radius: 12px;
-    /* Bordas arredondadas */
+    padding: 0px 0px;
+    border-radius: 8px;
     cursor: pointer;
-    /* Mão ao passar o mouse */
     transition: background-color 0.3s, color 0.3s;
-    /* Transições suaves */
 }
 
 #toggleTema:hover {
@@ -98,16 +115,40 @@ div#pesquisartitnot {
     /* Cor do texto ao passar o mouse */
 }
 
+#imagem{
+    font-size: 10px;
+}
+
 div#menuetema{
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    left: 1%;
+    gap: 5px;
 }
 
 /* Estilos para o tema claro */
 body {
     background-color: white;
     color: black;
+}
+
+
+.card {
+    background-color: white;
+    /* Cor do cartão claro */
+}
+#nota {
+    height: 200px;
+    font-size: 12px;
+    background-color: rgb(247, 248, 243);
+    border: none;
+    border-radius: 3px;
+    color: rgb(36, 35, 35);
 }
 
 /* Estilos para o tema escuro */
@@ -117,18 +158,14 @@ body.dark {
     color: white;
     /* Cor do texto clara */
 }
-
-.card {
-    background-color: white;
-    /* Cor do cartão claro */
-}
-
 /* Estilos para cartões no tema escuro */
 body.dark .card {
     background-color: #1e1e1e;
     /* Cor do cartão escura */
 }
-.dark textarea {
+.dark #nota {
+    height: 200px;
+    font-size: 12px;
     background-color: rgb(70, 62, 62);
     border: none;
     border-radius: 3px;
@@ -146,6 +183,4 @@ body.dark .card {
     border-radius: 3px;
     color: whitesmoke;
 }
-
-
 /*final temas*/
