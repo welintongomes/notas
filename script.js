@@ -206,6 +206,9 @@ function criarCard(nota) {
     // Botão de Editar
     const btnEditar = document.createElement('button');
     btnEditar.textContent = 'Editar';
+    btnEditar.style.backgroundColor = 'green';
+    btnEditar.style.border = 'none';
+    btnEditar.style.borderRadius = '8px';
     btnEditar.onclick = function (e) {
         e.stopPropagation(); // Impede que o clique propague para o card
 
@@ -231,6 +234,9 @@ function criarCard(nota) {
     // Botão de Excluir
     const btnExcluir = document.createElement('button');
     btnExcluir.textContent = 'Excluir';
+    btnExcluir.style.backgroundColor = 'red';
+    btnExcluir.style.border = 'none';
+    btnExcluir.style.borderRadius = '8px';
     btnExcluir.onclick = function (e) {
         e.stopPropagation(); // Impede que o clique propague para o card
         excluirNota(nota.id); // Chama a função para excluir
@@ -421,6 +427,7 @@ if (localStorage.getItem('tema') === 'dark') {
 // Alternar tema e salvar a preferência
 document.getElementById('toggleTema').onclick = function () {
     document.body.classList.toggle('dark');
+
     // Alterna o ícone
     const temaIcon = document.getElementById('temaIcon');
     if (document.body.classList.contains('dark')) {
@@ -437,7 +444,3 @@ if (localStorage.getItem('tema') === 'dark') {
     document.body.classList.add('dark');
     document.getElementById('temaIcon').textContent = '🌙'; // Define o ícone inicial
 }
-
-
-
-
