@@ -174,3 +174,6 @@ body.dark .card {
 .text-center {
     font-family: serif;
 }
+body {
+    padding-top: calc(40px + 7vh) ; /* Espaçamento para evitar que o conteúdo fique atrás da barra */
+}
