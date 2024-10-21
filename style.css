@@ -158,6 +158,8 @@ body.dark .card {
 #topo {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     background-color: #ffffffb5; /* Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
     padding: 10px; /* Espaçamento interno */
@@ -166,6 +168,8 @@ body.dark .card {
 .dark #topo {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     background-color: #121212b5; /*Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
     padding: 10px; /* Espaçamento interno */
