@@ -132,10 +132,14 @@ body.dark .card {
 .dark #pesquisar{
     background-color: rgb(70 62 62 / 66%);
     border: none;
+    position: relative;
+    left: 7px;
     border-radius: 3px;
     color: whitesmoke;
 }
 #pesquisar{
+    position: relative;
+    left: 7px;
     background-color: rgba(247, 248, 243, 0.525);
     border-radius: 3px;
     
@@ -157,7 +161,7 @@ body.dark .card {
 }
 #topo {
     position: sticky;
-    top: 0;
+    top: 3px;
     left: 0;
     right: 0;
     background-color: #ffffffb5; /* Ou a cor que preferir */
@@ -167,12 +171,12 @@ body.dark .card {
 }
 .dark #topo {
     position: sticky;
-    top: 0;
+    top: 3px;
     left: 0;
     right: 0;
     background-color: #121212b5; /*Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    padding: 0px; /* Espaçamento interno */
+    padding-left: 4px; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .text-center {
