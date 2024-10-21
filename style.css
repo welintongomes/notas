@@ -162,7 +162,7 @@ body.dark .card {
     right: 0;
     background-color: #ffffffb5; /* Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    padding: 2px; /* Espaçamento interno */
+    padding: 0px; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .dark #topo {
@@ -172,7 +172,7 @@ body.dark .card {
     right: 0;
     background-color: #121212b5; /*Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    padding: 2px; /* Espaçamento interno */
+    padding: 0px; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .text-center {
