@@ -7,49 +7,53 @@
     <title>Minhas Notas</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css"> <!-- Inclua o Bootstrap -->   
     <link rel="shortcut icon" href="icon-512x512.png" type="image/png">
 </head>
 
-<body>
-    <div id="menuetema">
-        <input type="text" id="pesquisar" placeholder="Pesquisar notas...">
-        <h1>Notas</h1>
-        <button id="toggleTema">Tema
-        <span id="temaIcon">🌞</span> 
+<body class="container py-4">
+    <!-- Menu e tema -->
+    <div id="topo" class="d-flex justify-content-between align-items-center mb-4">
+        <input type="text" id="pesquisar" class="form-control w-50" placeholder="Pesquisar notas...">
+        <h1 class="text-center flex-grow-1">Notas</h1>
+        <button id="toggleTema" class="btn btn-outline-secondary">
+            Tema <span id="temaIcon">🌙</span>
         </button>
     </div>
-    <!-- botoes para mudar o tema -->
-    <div id="pesquisartitnot">
-        <input type="text" id="titulo" placeholder="Título da nota...">
-        <textarea id="nota" placeholder="Digite sua nota aqui..."></textarea>
-        <input type="file" id="imagem" accept="image/*">
-    </div>
-    <div id="botoes-centrais">
-        <button id="salvar" class="btoes">Salvar Nota</button>
-        <!-- exportarNotas chama direto no codigo script.js a funçao exportarNotas -->
-        <button id="exportarNotas" class="btoes">Exportar Notas</button>
 
-        <!-- chama com botão um file para inportar o arquivo json -->
-        <button id="abrirImportar" class="btoes">Importar Notas</button>
-        <input type="file" id="inputImportar" style="display: none;">
-
-        <!-- botão para excluir todas as notas -->
-        <button id="excluirTodasNotas" class="btoes">Excluir Tudo</button>
+    <!-- Pesquisa e título da nota -->
+    <div class="mb-12">
+        <input type="text" id="titulo" class="form-control mb-3" placeholder="Título da nota...">
+        <textarea id="nota" class="form-control mb-3" placeholder="Digite sua nota aqui..."></textarea>
+        <input type="file" id="imagem" class="form-control" accept="image/*">
     </div>
 
+    <!-- Botões centrais -->
+    <!-- Botões centrais -->
+<div id="botoes-centrais" class="row mb-2 pt-2">
+    <div class="col-6 col-md-3 mb-2">
+        <button id="salvar" class="btn btn-primary w-100">Salvar Nota</button>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+        <button id="abrirImportar" class="btn btn-warning w-100">Importar Notas</button>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+        <button id="exportarNotas" class="btn btn-secondary w-100">Exportar Notas</button>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+        <button id="excluirTodasNotas" class="btn btn-danger w-100">Excluir Tudo</button>
+    </div>
+</div>
 
-    <div id="resultado"></div>
+    
+    <input type="file" id="inputImportar" style="display: none;">
+    <!-- Resultado -->
+    <div id="resultado" class="mt-4"></div>
+    
+    <!-- Inclusão do Bootstrap JS -->
+    <script src="bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(function (registration) {
-                    console.log('Service Worker registrado com sucesso:', registration.scope);
-                }).catch(function (error) {
-                    console.log('Falha ao registrar o Service Worker:', error);
-                });
-        }
-    </script>
 </body>
+
 
 </html>
