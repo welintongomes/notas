@@ -156,7 +156,7 @@ body.dark .card {
     color: white;
 }
 #topo {
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: #ffffffb5; /* Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
@@ -164,7 +164,7 @@ body.dark .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .dark #topo {
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: #121212b5; /*Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
