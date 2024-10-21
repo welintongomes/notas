@@ -11,11 +11,10 @@ request.onupgradeneeded = function (event) {
 // Quando o banco de dados estiver aberto com sucesso
 request.onsuccess = function (event) {
     db = event.target.result;
-    carregarNotas(); // Carregar notas ao abrir
+    // Removido: carregarNotas(); // Não carrega notas ao abrir
 };
 
 //função para exportar notas
-
 document.getElementById('exportarNotas').onclick = function () {
     const transaction = db.transaction(['notas'], 'readonly');
     const objectStore = transaction.objectStore('notas');
@@ -105,7 +104,6 @@ function converterBase64ParaArrayBuffer(base64) {
     });
 }
 
-
 //função para excluir todas as notas
 document.getElementById('excluirTodasNotas').onclick = function () {
     const transaction = db.transaction(['notas'], 'readwrite');
@@ -130,6 +128,11 @@ document.getElementById('pesquisar').oninput = function () {
     const termo = normalizarTexto(this.value);
     const lista = document.getElementById('resultado');
     lista.innerHTML = ''; // Limpa a lista antes de carregar
+    
+    if (termo === '') {
+        // Se a barra de pesquisa estiver vazia, não faz nada e sai da função
+        return;
+    }
 
     const transaction = db.transaction(['notas'], 'readonly');
     const objectStore = transaction.objectStore('notas');
@@ -206,8 +209,7 @@ function criarCard(nota) {
     // Botão de Editar
     const btnEditar = document.createElement('button');
     btnEditar.textContent = 'Editar';
-    btnEditar.style.backgroundColor = 'green';
-    btnEditar.style.border = 'none';
+    btnEditar.className = 'btn btn-success'; // Classe Bootstrap para botão verde
     btnEditar.style.borderRadius = '8px';
     btnEditar.onclick = function (e) {
         e.stopPropagation(); // Impede que o clique propague para o card
@@ -234,8 +236,7 @@ function criarCard(nota) {
     // Botão de Excluir
     const btnExcluir = document.createElement('button');
     btnExcluir.textContent = 'Excluir';
-    btnExcluir.style.backgroundColor = 'red';
-    btnExcluir.style.border = 'none';
+    btnExcluir.className = 'btn btn-danger'; // Classe Bootstrap para botão vermelho
     btnExcluir.style.borderRadius = '8px';
     btnExcluir.onclick = function (e) {
         e.stopPropagation(); // Impede que o clique propague para o card
@@ -279,9 +280,6 @@ function criarCard(nota) {
         doc.close();
     };
     
-
-
-
     // Clique para expandir ou recolher o conteúdo
     card.onclick = function () {
         // Recolhe qualquer card expandido
@@ -325,9 +323,6 @@ function criarCard(nota) {
 
     lista.appendChild(card);
 }
-
-
-
 
 // Variável global para armazenar o ID da nota em edição
 let currentEditingId = null;
@@ -444,3 +439,14 @@ if (localStorage.getItem('tema') === 'dark') {
     document.body.classList.add('dark');
     document.getElementById('temaIcon').textContent = '🌙'; // Define o ícone inicial
 }
+
+//service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+        .then(function (registration) {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+        }).catch(function (error) {
+            console.log('Falha ao registrar o Service Worker:', error);
+        });
+}
+//fim service worker
