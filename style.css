@@ -156,28 +156,25 @@ body.dark .card {
     color: white;
 }
 #topo {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
     background-color: #ffffffb5; /* Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    padding: 10px; /* Espaçamento interno */
+    padding: 2px; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .dark #topo {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
     background-color: #121212b5; /*Ou a cor que preferir */
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    padding: 10px; /* Espaçamento interno */
+    padding: 2px; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .text-center {
     font-family: serif;
-}
-body {
-    padding-top: calc(40px + 7vh) ; /* Espaçamento para evitar que o conteúdo fique atrás da barra */
 }
